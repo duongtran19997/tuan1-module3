@@ -1,30 +1,30 @@
-let axios = require('axios')
-function getDataJSON() {
-    return new Promise(((resolve, reject) => {
-        axios.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY',
-            ).then(response=>{
-      resolve(response.data)})
-            .catch(err =>{
-            reject(err)
-        })
-    }))
-}
-
-getDataJSON().then(res=>{
-    const IMG = res
-    console.log(res['hdurl']);;
-}).catch(e=>{
-    console.log(e.message);
-})
-// const axios = require("axios");
-//
-// const getAPOD = async () => {
-//     const getAPOD = await axios.get("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY");
-//     return getAPOD.data;
+// let axios = require('axios')
+// function getDataJSON() {
+//     return new Promise(((resolve, reject) => {
+//         axios.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY',
+//             ).then(response=>{
+//       resolve(response.data)})
+//             .catch(err =>{
+//             reject(err)
+//         })
+//     }))
 // }
 //
-// getAPOD()
-//     .then(json => {
-//         const APOD = json
-//         console.log(APOD["hdurl"])
-//     })
+// getDataJSON().then(res=>{
+//     const IMG = res
+//     console.log(res['hdurl']);;
+// }).catch(e=>{
+//     console.log(e.message);
+// })
+const axios = require("axios");
+
+const getAPOD = async () => {
+    const getApod = await axios.get("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY");
+    return getApod.data;
+}
+
+getAPOD()
+    .then(json => {
+        const APOD = json
+        console.log(APOD["hdurl"])
+    })
