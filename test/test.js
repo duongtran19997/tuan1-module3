@@ -62,22 +62,39 @@
 //     console.log(`Completed in ${t}`)
 // }, t)}
 
-async function doWord(){
-    try {
-        let a = await new Promise((resolve, reject) => {
-            resolve("1000")
-        })
-        // .then(data => {
-        //     console.log(data)
-        //     console.log("asds")
-        // })
-        console.log(a)
-        console.log("dfgdfgd")
-    } catch (err) {
-
-    }
-
-
+// async function doWord(){
+//     try {
+//         let a = await new Promise((resolve, reject) => {
+//             resolve("1000")
+//         })
+//         // .then(data => {
+//         //     console.log(data)
+//         //     console.log("asds")
+//         // })
+//         console.log(a)
+//         console.log("dfgdfgd")
+//     } catch (err) {
+//
+//     }
+//
+//
+// }
+//
+// doWord()
+async function demo(day){
+    return new Promise(((resolve, reject) => {
+        if(day>5){
+            reject('toibiom')
+        }else{
+            resolve('toikhoe')
+        }
+    }))
 }
 
-doWord()
+async function demo2(day){
+  return   await demo(day)
+}
+
+demo2(3).then(result=>{
+    console.log(result);
+})

@@ -1,5 +1,5 @@
 function countTime(t) {
-    waiting(t).then(
+    waiting(t,buyCar).then(
         resolve =>{
             console.log(resolve);
         }
@@ -8,18 +8,22 @@ function countTime(t) {
     })
 }
 
-function waiting(i) {
+function waiting(i,callback) {
+    callback()
     return new Promise(((resolve, reject) => {
         setTimeout(() => {
                 if (i <= 0) {
-                    reject(new Error('count done'))
+                    reject( new Error('count done'))
                 } else {
                     console.log(i)
                     i--
-                    resolve(waiting(i))
+                    resolve(waiting(i,buyCar))
                 }
             }
             , 1000 )
     }))
 }
-countTime(5)
+function buyCar(){
+    console.log('abc')
+}
+countTime(4)

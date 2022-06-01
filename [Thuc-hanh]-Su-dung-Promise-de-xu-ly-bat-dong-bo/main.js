@@ -6,11 +6,11 @@ let promise =(x)=> new Promise(((resolve, reject) => {
     }
 }))
 
-promise(true).then( result =>{
+promise(false).then( result =>{
         console.log(`se lam ${result}cai banh`);
     }
 ).catch(err=>{
-    console.log(err);
+    console.log(err.message);
 }).finally(()=>{
     console.log('van to chuc party')
     }
