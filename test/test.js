@@ -81,20 +81,43 @@
 // }
 //
 // doWord()
-async function demo(day){
-    return new Promise(((resolve, reject) => {
-        if(day>5){
-            reject('toibiom')
-        }else{
-            resolve('toikhoe')
-        }
-    }))
+// async function demo(day){
+//     return new Promise(((resolve, reject) => {
+//         if(day>5){
+//             reject('toibiom')
+//         }else{
+//             resolve('toikhoe')
+//         }
+//     }))
+// }
+//
+// async function demo2(day){
+//   return   await demo(day)
+// }
+//
+// demo2(3).then(result=>{
+//     console.log(result);
+// })
+// try {
+//     try {
+//         throw new Error('oops');
+//     } catch (ex) {
+//         console.error('inner', ex.message);
+//     } finally {
+//         console.log('finally');
+//     }
+// } catch (ex) {
+//     console.error('outer', ex.message);
+// }
+let axios = require('axios')
+function getJSONAPI() {
+    let a = new Promise(function (resolve) {
+        axios.get('http://jsonplaceholder.typicode.com/posts/1')
+            .then(function (json) {
+                resolve(json.data);
+            });
+    });
+    return a;
 }
 
-async function demo2(day){
-  return   await demo(day)
-}
-
-demo2(3).then(result=>{
-    console.log(result);
-})
+console.log(getJSONAPI());
