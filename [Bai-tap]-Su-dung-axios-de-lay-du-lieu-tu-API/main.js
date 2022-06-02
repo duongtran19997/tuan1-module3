@@ -16,7 +16,7 @@
 // }).catch(e=>{
 //     console.log(e.message);
 // })
-const axios = require("axios");
+
 
 const getAPOD = async () => {
     const getApod = await axios.get("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY");
@@ -26,5 +26,6 @@ const getAPOD = async () => {
 getAPOD()
     .then(json => {
         const APOD = json
-        console.log(APOD["hdurl"])
+       document.getElementById('img').setAttribute('src',APOD.url)
+       //  console.log(APOD['url'])
     })

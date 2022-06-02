@@ -109,15 +109,21 @@
 // } catch (ex) {
 //     console.error('outer', ex.message);
 // }
-let axios = require('axios')
-function getJSONAPI() {
-    let a = new Promise(function (resolve) {
-        axios.get('http://jsonplaceholder.typicode.com/posts/1')
-            .then(function (json) {
-                resolve(json.data);
-            });
-    });
-    return a;
-}
-
-console.log(getJSONAPI());
+// let axios = require('axios')
+// function getJSONAPI() {
+//     let a = new Promise(function (resolve) {
+//         axios.get('http://jsonplaceholder.typicode.com/posts/1')
+//             .then(function (json) {
+//                 resolve(json.data);
+//             });
+//     });
+//     return a;
+// }
+//
+// console.log(getJSONAPI());
+const http = require('http')
+const server = http.createServer(((req, res) => {
+    res.write('<h1>  https://codegym.vn</h1><hr>');
+        res.end()
+}))
+server.listen(8080, '127.0.0.1');
