@@ -1,0 +1,7 @@
+{
+  "name": "[Thuc-hanh]-Truyen-du-lieu-sang-Template-HTML",
+  "version": "1.0.0",
+  "dependencies": {
+    "qs": "^6.10.3"
+  }
+}
